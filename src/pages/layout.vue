@@ -2,7 +2,7 @@
   <el-container>
     <el-header id="header">公路施工质量实时数据监测平台</el-header>
     <el-container>
-      <el-aside width="210px">
+      <el-aside width="210px" style="background-color: #545c64;">
         <el-menu
           default-active="/index"
           :default-openeds="['2', '3']"
@@ -20,7 +20,7 @@
               ><i class="el-icon-message"></i>动态数据</template
             >
             <el-menu-item-group>
-              <el-menu-item index="/test1">水稳拌合站</el-menu-item>
+              <el-menu-item index="/shuiwen">水稳拌合站</el-menu-item>
               <el-menu-item index="/test2">改性沥青站</el-menu-item>
               <el-menu-item index="/test3">沥青拌合站</el-menu-item>
             </el-menu-item-group>

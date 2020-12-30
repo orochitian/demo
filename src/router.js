@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import login from './pages/login.vue'
 import layout from './pages/layout.vue'
 import index from './pages/index.vue'
+import shuiwen from './pages/shuiwen/index.vue'
 
 vue.use(VueRouter)
 
@@ -25,6 +26,11 @@ const router = new VueRouter({
           name: 'index',
           path: 'index',
           component: index
+        },
+        {
+          name: 'shuiwen',
+          path: 'shuiwen',
+          component: shuiwen
         }
       ]
     },
