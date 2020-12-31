@@ -1,10 +1,10 @@
 <template>
   <el-container>
     <el-header id="header">公路施工质量实时数据监测平台</el-header>
-    <el-container>
+    <el-container class="content">
       <el-aside width="210px" style="background-color: #545c64;">
         <el-menu
-          default-active="/index"
+          :default-active="currentAcitve"
           :default-openeds="['2', '3']"
           background-color="#545c64"
           text-color="#fff"
@@ -46,7 +46,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    currentAcitve() {
+      return this.$route.path
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -55,6 +61,9 @@ export default {};
   line-height: 60px;
   font-size: 20px;
   color: #eee;
+}
+.content{
+  font-size: 14px;
 }
 </style>
 

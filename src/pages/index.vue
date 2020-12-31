@@ -440,7 +440,7 @@ export default {
   margin-top: 30px;
 }
 .charts {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 600px;
   height: 400px;
 }
