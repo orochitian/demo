@@ -68,6 +68,9 @@ export default {
 </style>
 
 <style>
+html{
+  min-height: 100%;
+}
 body {
   margin: 0;
 }

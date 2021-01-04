@@ -24,10 +24,10 @@ export default {
       },
       rules: {
         username: [
-          {pattern: /admin/, required: true, message: '用户名错误', trigger: 'change'}
+          {pattern: /admin/, required: true, message: '用户名错误', trigger: 'submit'}
         ],
         password: [
-          {pattern: /admin/, required: true, message: '密码错误', trigger: 'change'}
+          {pattern: /admin/, required: true, message: '密码错误', trigger: 'submit'}
         ]
       }
     }

@@ -92,7 +92,7 @@
     </el-table>
     <!-- 周数据 -->
     <el-tabs type="border-card" class="week-tab">
-      <el-tab-pane label="攀西高速">
+      <el-tab-pane label="设备类型一（例如：水稳）">
         <el-row :gutter="40">
           <el-col :md="12">
             <div ref="chart1" class="charts"></div>
@@ -113,7 +113,7 @@
           </el-col>
         </el-row>
       </el-tab-pane>
-      <el-tab-pane label="资潼高速">
+      <el-tab-pane label="设备二（例如：沥青）">
         <el-row :gutter="40">
           <el-col :md="12">
             <div ref="chart2" class="charts"></div>
@@ -287,7 +287,7 @@ export default {
     let chart2 = this.$chart.init(this.$refs.chart2);
     chart1.setOption({
       title: {
-        text: "攀西高速--近7日产量",
+        text: "水稳所有设备近7日产量",
         left: "center",
       },
       color: ['#91c7ae'],
@@ -341,7 +341,7 @@ export default {
     });
     chart2.setOption({
       title: {
-        text: "资潼高速--近7日产量",
+        text: "水稳所有设备，近7日产量",
         left: "center",
       },
       color: ['#ca8622'],
