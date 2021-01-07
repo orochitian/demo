@@ -6,6 +6,7 @@ import layout from './pages/layout.vue'
 import index from './pages/index.vue'
 import shuiwen from './pages/shuiwen/manage.vue'
 import shuiwenDetail from './pages/shuiwen/details.vue'
+import user from './pages/user'
 
 vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const router = new VueRouter({
           name: 'shuiwenDetail',
           path: 'shuiwenDetail',
           component: shuiwenDetail
+        },
+        {
+          name: 'user',
+          path: 'user',
+          component: user
         }
       ]
     },

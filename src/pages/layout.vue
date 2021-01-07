@@ -1,8 +1,19 @@
 <template>
   <el-container>
-    <el-header id="header">公路施工质量实时数据监测平台</el-header>
+    <el-header id="header">
+      <span>公路施工质量实时数据监测平台</span>
+      <el-dropdown class="drop-down">
+        <span class="el-dropdown-link">
+          admin <i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item @click.native="$router.push('/user')">个人中心</el-dropdown-item>
+          <el-dropdown-item @click.native="logoutHandler">退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </el-header>
     <el-container class="content">
-      <el-aside width="210px" style="background-color: #545c64;">
+      <el-aside width="210px" style="background-color: #545c64">
         <el-menu
           :default-active="currentAcitve"
           :default-openeds="['2', '3']"
@@ -49,26 +60,39 @@
 export default {
   computed: {
     currentAcitve() {
-      return this.$route.path
+      return this.$route.path;
+    },
+  },
+  methods: {
+    logoutHandler() {
+      this.$confirm('是否退出当前登录？', '提示').then(() => {
+        window.sessionStorage.setItem('login', '')
+        this.$router.push('/login')
+      })
     }
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #header {
   background-color: #43464b;
   line-height: 60px;
   font-size: 20px;
   color: #eee;
 }
-.content{
+.content {
   font-size: 14px;
+}
+.drop-down{
+  float: right;
+  margin-right: 20px;
+  color: #fff;
 }
 </style>
 
 <style>
-html{
+html {
   min-height: 100%;
 }
 body {
