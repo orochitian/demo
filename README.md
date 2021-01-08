@@ -1,24 +1,25 @@
-# test
+## 系统管理
+    1. 角色管理
+    2. 用户管理
+    3. 系统日志
 
-## Project setup
-```
-npm install
-```
+## 设备管理
+    1. 设备维护
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 动态数据
+    1. 沥青拌合站
+    2. 水泥拌和站
+    3. 水稳拌合站
+    4. 摊铺碾压
+    5. 改姓沥青站
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 综合分析（根据设备类型，有几种展示几种）
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 设备分布
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 监控中心
+    1. 预警管理
+    2. 预警查看
+
+待定：
+留言管理、数据管理
