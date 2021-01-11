@@ -13,7 +13,7 @@
         </el-form-item>
       </el-form>
     </el-card>
-    <el-dialog title="修改密码" :visible.sync="dialogTableVisible">
+    <el-dialog title="修改密码" :visible.sync="dialogTableVisible" width="30%">
       <el-form size="small" label-position="left">
         <el-form-item label="旧密码">
           <el-input v-model="oldPwd"></el-input>
@@ -26,8 +26,8 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogTableVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogTableVisible = false">确 定</el-button>
+        <el-button size="small" @click="dialogTableVisible = false">取 消</el-button>
+        <el-button size="small" type="primary" @click="dialogTableVisible = false">确 定</el-button>
       </div>
     </el-dialog>
   </div>

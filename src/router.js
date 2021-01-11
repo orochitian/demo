@@ -8,6 +8,11 @@ import shuiwen from './pages/shuiwen/manage.vue'
 import shuiwenDetail from './pages/shuiwen/details.vue'
 import user from './pages/user'
 
+import userManager from './pages/userManager'
+import roleManager from './pages/roleManager'
+
+import systemLog from './pages/systemLog'
+
 vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -28,22 +33,32 @@ const router = new VueRouter({
           name: 'index',
           path: 'index',
           component: index
-        },
-        {
+        }, {
           name: 'shuiwen',
           path: 'shuiwen',
           component: shuiwen
-        },
-        {
+        }, {
           name: 'shuiwenDetail',
           path: 'shuiwenDetail',
           component: shuiwenDetail
-        },
-        {
+        }, {
           name: 'user',
           path: 'user',
           component: user
+        }, {
+          name: 'userManager',
+          path: 'userManager',
+          component: userManager
+        }, {
+          name: 'roleManager',
+          path: 'roleManager',
+          component: roleManager
+        }, {
+          name: 'systemLog',
+          path: 'systemLog',
+          component: systemLog
         }
+
       ]
     },
   ]
