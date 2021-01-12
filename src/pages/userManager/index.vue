@@ -1,7 +1,18 @@
 <template>
   <div class="container">
     <el-card class="box-card">
-      <div slot="header">用户管理</div>
+      <div slot="header">
+        <span>用户管理</span>
+        <el-button
+          type="primary"
+          icon="el-icon-circle-plus-outline"
+          style="float: right"
+          size="small"
+          @click="addHandler"
+          >添加用户</el-button
+        >
+      </div>
+      
       <el-table :data="userList" stripe border>
         <el-table-column label="用户ID" align="center">
           <template slot-scope="scope">
@@ -26,7 +37,7 @@
               size="mini"
               >编辑</el-button
             >
-            <el-button round icon="el-icon-delete" type="danger" size="mini"
+            <el-button round icon="el-icon-delete" type="danger" size="mini" @click="deleteHandler(scope.$index)"
               >删除</el-button
             >
           </template>
@@ -34,9 +45,9 @@
       </el-table>
     </el-card>
     <el-dialog title="编辑用户" :visible.sync="dialogFormVisible">
-      <el-form :model="form" size="small">
+      <el-form :model="form" size="small" label-width="80px">
         <el-form-item label="用户名称">
-          <span>{{ form.username }}</span>
+          <el-input type="text" v-model="form.username"></el-input>
         </el-form-item>
         <el-form-item label="用户角色">
           <el-select v-model="form.role" placeholder="请选择用户角色">
@@ -81,10 +92,18 @@ export default {
     };
   },
   methods: {
+    addHandler() {
+      this.dialogFormVisible = true
+    },
     editHandler(row, index) {
       this.form = { ...row };
       this.form.username = `用户${index + 1}号`;
       this.dialogFormVisible = true;
+    },
+    deleteHandler(index) {
+      this.$confirm('确定要删除用户？', '提示').then(() => {
+        this.userList.splice(index, 1)
+      })
     },
   },
 };
