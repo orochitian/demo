@@ -12,7 +12,7 @@
           >添加用户</el-button
         >
       </div>
-      
+
       <el-table :data="userList" stripe border>
         <el-table-column label="用户ID" align="center">
           <template slot-scope="scope">
@@ -24,8 +24,7 @@
             <span>用户{{ scope.$index + 1 }}号</span>
           </template>
         </el-table-column>
-        <el-table-column prop="role" label="用户角色" align="center">
-        </el-table-column>
+        <el-table-column prop="role" label="用户角色" align="center"> </el-table-column>
         <el-table-column label="操作" align="center">
           <template slot-scope="scope">
             <el-button round icon="el-icon-search" size="mini">查看</el-button>
@@ -37,7 +36,12 @@
               size="mini"
               >编辑</el-button
             >
-            <el-button round icon="el-icon-delete" type="danger" size="mini" @click="deleteHandler(scope.$index)"
+            <el-button
+              round
+              icon="el-icon-delete"
+              type="danger"
+              size="mini"
+              @click="deleteHandler(scope.$index)"
               >删除</el-button
             >
           </template>
@@ -58,15 +62,8 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button size="small" @click="dialogFormVisible = false"
-          >取 消</el-button
-        >
-        <el-button
-          size="small"
-          type="primary"
-          @click="dialogFormVisible = false"
-          >确 定</el-button
-        >
+        <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
+        <el-button size="small" type="primary" @click="dialogFormVisible = false">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -78,27 +75,27 @@ export default {
     return {
       dialogFormVisible: false,
       userList: [
-        { role: "管理员" },
-        { role: "普通用户" },
-        { role: "高级用户" },
-        { role: "管理员" },
-        { role: "普通用户" },
-        { role: "高级用户" },
-        { role: "管理员" },
-        { role: "普通用户" },
-        { role: "高级用户" },
+        { role: '管理员' },
+        { role: '普通用户' },
+        { role: '高级用户' },
+        { role: '管理员' },
+        { role: '普通用户' },
+        { role: '高级用户' },
+        { role: '管理员' },
+        { role: '普通用户' },
+        { role: '高级用户' },
       ],
       form: {},
-    };
+    }
   },
   methods: {
     addHandler() {
       this.dialogFormVisible = true
     },
     editHandler(row, index) {
-      this.form = { ...row };
-      this.form.username = `用户${index + 1}号`;
-      this.dialogFormVisible = true;
+      this.form = { ...row }
+      this.form.username = `用户${index + 1}号`
+      this.dialogFormVisible = true
     },
     deleteHandler(index) {
       this.$confirm('确定要删除用户？', '提示').then(() => {
@@ -106,8 +103,7 @@ export default {
       })
     },
   },
-};
+}
 </script>
 
-<style>
-</style>
+<style></style>

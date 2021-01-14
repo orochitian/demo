@@ -13,6 +13,8 @@ import roleManager from './pages/roleManager'
 
 import systemLog from './pages/systemLog'
 
+import deviceManager from './pages/deviceManager'
+
 vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -57,6 +59,10 @@ const router = new VueRouter({
           name: 'systemLog',
           path: 'systemLog',
           component: systemLog
+        }, {
+          name: 'deviceManager',
+          path: 'deviceManager',
+          component: deviceManager
         }
 
       ]
