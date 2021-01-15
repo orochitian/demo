@@ -44,7 +44,7 @@
           </el-submenu>
           <el-submenu index="4">
             <template slot="title"> <i class="el-icon-menu"></i>综合分析 </template>
-            <el-menu-item index="2-1">水稳拌合统计</el-menu-item>
+            <el-menu-item index="/shuiwenCountManager">水稳拌合统计</el-menu-item>
             <el-menu-item index="2-2">改性沥青统计</el-menu-item>
             <el-menu-item index="2-2">沥青拌合统计</el-menu-item>
             <el-menu-item index="2-2">沥青超差统计</el-menu-item>

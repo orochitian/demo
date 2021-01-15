@@ -20,26 +20,34 @@
           <el-table-column prop="number" label="设备编号" align="center"></el-table-column>
           <el-table-column prop="comp" label="所属单位" align="center"></el-table-column>
           <el-table-column label="操作" align="center">
-            <template slot-scope="">  
-              <el-button round icon="el-icon-warning-outline" type="danger" size="mini">预警</el-button>
+            <template slot-scope="">
+              <el-button round icon="el-icon-warning-outline" type="danger" size="mini" @click="openWarnDialog">预警</el-button>
               <el-button round icon="el-icon-edit" type="primary" size="mini">配方</el-button>
             </template>
           </el-table-column>
         </el-table>
       </div>
     </el-card>
-    <el-dialog title="添加设备" :visible.sync="dialogFormVisible">
-      <el-form :model="form" size="small" label-width="80px" inline>
-        <el-form-item label="设备名称">
-          <el-input type="text" v-model="form.name"></el-input>
+    <el-dialog title="设备预警" :visible.sync="dialogFormVisible" width="900px">
+      <el-form :model="warnForm" size="small" label-width="100px" inline>
+        <el-form-item label="预警阈值">
+          <el-input type="text"></el-input>
         </el-form-item>
-        <el-form-item label="设备类型">
-          <el-select v-model="currentTab" disabled>
-            <el-option label="水稳拌合" value="1"></el-option>
-            <el-option label="改性沥青" value="2"></el-option>
-            <el-option label="沥青拌合" value="3"></el-option>
-          </el-select>
-        </el-form-item>
+        <div style="position: relative;" v-for="(item, index) in warnList" :key="index">
+          <el-form-item label="联系人">
+            <el-input type="text" v-model="item.name"></el-input>
+          </el-form-item>
+          <el-form-item label="联系电话">
+            <el-input type="text" v-model="item.tel"></el-input>
+          </el-form-item>
+          <el-form-item label="短信通知">
+            <el-switch v-model="item.sendMessage"></el-switch>
+          </el-form-item>
+          <span class="delete-icon el-icon-delete" v-if="warnList.length > 1" @click="deleteWarnList(index)"></span>
+        </div>
+        <div style="text-align: right; margin-top: 20px;">
+          <el-button type="primary" size="mini" @click="appendWarnList" v-if="warnList.length < 5">添加</el-button>
+        </div>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
@@ -83,6 +91,18 @@ export default {
       form: {
         name: '',
       },
+      warnForm: {
+        sendMessage: false,
+        name: '',
+        tel: '',
+      },
+      warnList: [
+        {
+          sendMessage: false,
+          name: '',
+          tel: '',
+        },
+      ],
     }
   },
   methods: {
@@ -94,6 +114,15 @@ export default {
       setTimeout(() => {
         this.loading = false
       }, 500)
+    },
+    openWarnDialog() {
+      this.dialogFormVisible = true
+    },
+    appendWarnList() {
+      this.warnList.push(Object.assign({}, this.warnForm))
+    },
+    deleteWarnList(index) {
+      this.warnList.splice(index, 1)
     },
   },
 }
@@ -107,5 +136,12 @@ export default {
 .off {
   color: #f56c6c;
   // font-weight: bold;
+}
+.delete-icon {
+  float: right;
+  margin-top: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #f56c6c;
 }
 </style>

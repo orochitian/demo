@@ -206,12 +206,12 @@ export default {
 </style>
 
 <style lang="scss">
-.el-date-table td.available > div > span {
+.date-picker .el-date-table td.available > div > span {
   background-color: #67c23a !important;
   color: #fff;
   border-radius: 50%;
 }
-.el-date-table td.available.current > div > span {
+.date-picker .el-date-table td.available.current > div > span {
   background-color: #409eff !important;
   font-weight: bold;
 }

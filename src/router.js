@@ -15,6 +15,9 @@ import systemLog from './pages/systemLog'
 
 import deviceManager from './pages/deviceManager'
 
+import shuiwenCountManager from './pages/countManager/shuiwenManager.vue'
+import shuiwenCountDetail from './pages/countManager/shuiwenDetails.vue'
+
 vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -63,6 +66,14 @@ const router = new VueRouter({
           name: 'deviceManager',
           path: 'deviceManager',
           component: deviceManager
+        }, {
+          name: 'shuiwenCountManager',
+          path: 'shuiwenCountManager',
+          component: shuiwenCountManager
+        }, {
+          name: 'shuiwenCountDetail',
+          path: 'shuiwenCountDetail',
+          component: shuiwenCountDetail
         }
 
       ]

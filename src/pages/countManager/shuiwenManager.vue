@@ -47,7 +47,7 @@ export default {
     detailHandler(row) {
       console.log(row);
       this.$router.push({
-        path: '/shuiwenDetail',
+        path: '/shuiwenCountDetail',
         query: {
           id: row.num
         }
