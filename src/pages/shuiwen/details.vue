@@ -68,9 +68,6 @@
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="动态数据">动态数据</el-tab-pane>
-      <el-tab-pane label="曲线分析">曲线分析</el-tab-pane>
-      <el-tab-pane label="骨料曲线">骨料曲线</el-tab-pane>
-      <el-tab-pane label="水泥曲线">水泥曲线</el-tab-pane>
       <el-tab-pane label="不合格数据">不合格数据</el-tab-pane>
     </el-tabs>
   </div>

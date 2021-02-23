@@ -39,7 +39,7 @@
           <el-submenu index="3">
             <template slot="title"> <i class="el-icon-message"></i>动态数据 </template>
             <el-menu-item index="/shuiwen">水稳拌合站</el-menu-item>
-            <el-menu-item index="/test2">改性沥青站</el-menu-item>
+            <el-menu-item index="/test">改性沥青站</el-menu-item>
             <el-menu-item index="/test3">沥青拌合站</el-menu-item>
           </el-submenu>
           <el-submenu index="4">
